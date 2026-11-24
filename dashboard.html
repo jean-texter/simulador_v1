@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#123B68">
+
+    <title>EduSim | Panel principal</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg dashboard-navbar">
+        <div class="container">
+
+            <a class="navbar-brand dashboard-brand" href="dashboard.html">
+                <span class="brand-small-icon">
+                    <i class="bi bi-mortarboard-fill"></i>
+                </span>
+                EduSim
+            </a>
+
+            <div class="ms-auto d-flex align-items-center gap-3">
+
+                <span class="platform-status">
+                    <span class="status-dot"></span>
+                    Plataforma activa
+                </span>
+
+                <button class="btn-logout" id="logoutButton" type="button">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Salir</span>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container dashboard-main">
+
+        <!-- BIENVENIDA -->
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <span class="section-label">
+                    CENTRO DE APRENDIZAJE Y EVALUACIÓN
+                </span>
+
+                <h1>
+                    Bienvenido a <span>EduSim</span>
+                </h1>
+
+                <p>
+                    Esta plataforma ha sido diseñada para fortalecer tus
+                    conocimientos mediante simuladores de preguntas basados
+                    en libros, leyes, normativas y documentos de estudio.
+                </p>
+
+                <p>
+                    Selecciona el documento que deseas estudiar, responde
+                    las preguntas y evalúa tu desempeño. Podrás identificar
+                    tus aciertos, reconocer tus errores y mejorar
+                    progresivamente tu preparación académica.
+                </p>
+
+                <a href="#biblioteca" class="btn-explore">
+                    Explorar simuladores
+                    <i class="bi bi-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="welcome-illustration">
+                <div class="illustration-circle">
+                    <i class="bi bi-journal-check"></i>
+                </div>
+
+                <div class="floating-icon floating-one">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+
+                <div class="floating-icon floating-two">
+                    <i class="bi bi-bar-chart-fill"></i>
+                </div>
+
+                <div class="floating-icon floating-three">
+                    <i class="bi bi-book-half"></i>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS GENERALES -->
+        <section class="statistics-section">
+
+            <div class="stat-card">
+                <div class="stat-icon stat-blue">
+                    <i class="bi bi-collection"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="totalDocuments">0</span>
+                    <p>Documentos disponibles</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon stat-light">
+                    <i class="bi bi-patch-question"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="totalQuestions">0</span>
+                    <p>Preguntas registradas</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon stat-green">
+                    <i class="bi bi-clipboard-check"></i>
+                </div>
+
+                <div>
+                    <span class="stat-number" id="completedSimulations">—</span>
+                    <p>Simulacros realizados</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- BIBLIOTECA -->
+        <section class="library-section" id="biblioteca">
+
+            <div class="library-heading">
+
+                <div>
+                    <span class="section-label">BIBLIOTECA DIGITAL</span>
+                    <h2>Mis simuladores</h2>
+
+                    <p>
+                        Selecciona un documento para comenzar tu evaluación.
+                    </p>
+                </div>
+
+                <span class="library-counter" id="libraryCounter">
+                    0 documentos
+                </span>
+
+            </div>
+
+
+            <!-- AQUÍ SE GENERAN LAS TARJETAS -->
+            <div class="row g-4" id="simulatorContainer">
+
+                <div class="col-12 text-center py-5">
+                    <div class="spinner-border text-primary"></div>
+                    <p class="text-muted mt-3">
+                        Cargando biblioteca...
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <span>EduSim © 2026</span>
+                <span>Aprendizaje · Conocimiento · Evaluación</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- PAPAPARSE + CATÁLOGO + LÓGICA DEL DASHBOARD -->
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="js/bancos.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

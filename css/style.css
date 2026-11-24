@@ -1,0 +1,1349 @@
+
+/* =========================================
+   EDUSIM - PALETA DE COLORES
+========================================= */
+
+:root {
+    --blue-dark: #123B68;
+    --blue-primary: #1D5C99;
+    --blue-medium: #2878B9;
+    --blue-light: #EAF3FB;
+    --blue-soft: #F4F8FC;
+
+    --text-dark: #24364B;
+    --text-muted: #7B8A9A;
+
+    --white: #FFFFFF;
+    --border-color: #E2EAF2;
+
+    --shadow-card: 0 15px 45px rgba(18, 59, 104, 0.10);
+}
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-dark);
+    background: var(--blue-soft);
+}
+
+/* =========================================
+   PANTALLA PRINCIPAL
+========================================= */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(40, 120, 185, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(29, 92, 153, 0.10),
+            transparent 35%
+        ),
+        var(--blue-soft);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+    animation: fadeUp 0.7s ease;
+}
+
+/* =========================================
+   IDENTIDAD VISUAL
+========================================= */
+
+.brand-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.brand-icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 15px;
+
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--blue-dark),
+        var(--blue-medium)
+    );
+
+    border-radius: 20px;
+    font-size: 30px;
+
+    box-shadow: 0 8px 20px rgba(29, 92, 153, 0.25);
+}
+
+.brand-section h1 {
+    font-size: 32px;
+    font-weight: 750;
+    color: var(--blue-dark);
+    letter-spacing: -1px;
+}
+
+.brand-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* =========================================
+   TARJETA DE ACCESO
+========================================= */
+
+.login-card {
+    background: var(--white);
+    padding: 38px 35px;
+    border-radius: 18px;
+
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+}
+
+.login-heading {
+    margin-bottom: 30px;
+}
+
+.login-heading h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.login-heading p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 7px;
+}
+
+/* =========================================
+   CAMPO DE CONTRASEÑA
+========================================= */
+
+.form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 9px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .form-control {
+    height: 52px;
+    padding: 12px 48px 12px 15px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 9px;
+
+    font-size: 14px;
+    box-shadow: none;
+    transition: all 0.25s ease;
+}
+
+.password-wrapper .form-control:focus {
+    border-color: var(--blue-medium);
+    box-shadow: 0 0 0 3px rgba(40, 120, 185, 0.12);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: transparent;
+    border: none;
+
+    color: var(--text-muted);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: var(--blue-primary);
+}
+
+/* =========================================
+   BOTÓN DE ACCESO
+========================================= */
+
+.btn-login {
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: var(--white);
+    background: linear-gradient(
+        110deg,
+        var(--blue-dark),
+        var(--blue-primary)
+    );
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-login:hover {
+    background: var(--blue-medium);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(29, 92, 153, 0.22);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   MENSAJE DE ERROR
+========================================= */
+
+.login-error {
+    display: none;
+    color: #D64545;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.login-error.show {
+    display: block;
+    animation: fadeUp 0.25s ease;
+}
+
+.login-error i {
+    margin-right: 4px;
+}
+
+/* =========================================
+   PIE DE TARJETA
+========================================= */
+
+.login-footer {
+    text-align: center;
+    margin-top: 27px;
+
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.login-footer i {
+    margin-right: 5px;
+    color: var(--blue-medium);
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.page-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.page-footer p {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.page-footer span {
+    font-size: 11px;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .brand-section h1 {
+        font-size: 28px;
+    }
+
+    .login-heading h2 {
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================================
+   EDUSIM - DASHBOARD
+========================================= */
+
+.dashboard-body {
+    background: #F4F7FB;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.dashboard-navbar {
+    background: #FFFFFF;
+    min-height: 75px;
+    border-bottom: 1px solid #E6EDF5;
+    box-shadow: 0 2px 12px rgba(18, 59, 104, 0.04);
+}
+
+.dashboard-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue-dark) !important;
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.brand-small-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue-dark);
+    color: white;
+    border-radius: 11px;
+    font-size: 19px;
+}
+
+.platform-status {
+    color: #64748B;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+}
+
+.btn-logout {
+    border: 1px solid #E1E8F0;
+    background: white;
+    color: #52657A;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+    background: #FFF1F1;
+    border-color: #F5CACA;
+    color: #DC4545;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.dashboard-main {
+    padding-top: 38px;
+    padding-bottom: 65px;
+}
+
+/* BIENVENIDA */
+
+.welcome-section {
+    min-height: 310px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 48px 55px;
+    border-radius: 17px;
+
+    background: linear-gradient(
+        115deg,
+        #123B68 0%,
+        #1D5C99 65%,
+        #2878B9 100%
+    );
+
+    box-shadow: 0 12px 30px rgba(18, 59, 104, 0.15);
+
+    animation: fadeUp 0.6s ease;
+}
+
+.welcome-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.section-label {
+    display: inline-block;
+    color: #4C85B9;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.welcome-section .section-label {
+    color: #B9D9F5;
+}
+
+.welcome-section h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 750;
+    color: white;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.welcome-section h1 span {
+    color: #A9D5FF;
+}
+
+.welcome-section p {
+    color: #D7E7F6;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 13px;
+    padding: 12px 19px;
+
+    color: var(--blue-dark);
+    background: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    transition: all 0.25s ease;
+}
+
+.btn-explore:hover {
+    background: #EAF3FB;
+    color: var(--blue-primary);
+    transform: translateY(-2px);
+}
+
+/* ILUSTRACIÓN */
+
+.welcome-illustration {
+    width: 230px;
+    height: 230px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    margin-right: 30px;
+}
+
+.illustration-circle {
+    width: 180px;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+    font-size: 90px;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.floating-icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+    background: white;
+    color: var(--blue-primary);
+
+    font-size: 21px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.floating-one {
+    top: 15px;
+    right: 5px;
+}
+
+.floating-two {
+    bottom: 15px;
+    right: 0;
+    animation-delay: 0.8s;
+}
+
+.floating-three {
+    bottom: 30px;
+    left: 0;
+    animation-delay: 1.4s;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ESTADÍSTICAS */
+
+.statistics-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    background: white;
+    border: 1px solid #E7EDF4;
+    border-radius: 12px;
+
+    padding: 21px 23px;
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(18, 59, 104, 0.07);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.stat-blue {
+    color: #1D5C99;
+    background: #EAF3FB;
+}
+
+.stat-light {
+    color: #2878B9;
+    background: #E8F4FF;
+}
+
+.stat-green {
+    color: #15966A;
+    background: #E5F7EF;
+}
+
+.stat-number {
+    font-size: 25px;
+    font-weight: 750;
+    color: var(--blue-dark);
+    line-height: 1.2;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: #7B8A9A;
+    margin: 5px 0 0;
+}
+
+/* BIBLIOTECA */
+
+.library-section {
+    margin-top: 55px;
+    scroll-margin-top: 25px;
+}
+
+.library-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 27px;
+}
+
+.library-heading h2 {
+    color: var(--blue-dark);
+    font-size: 26px;
+    font-weight: 750;
+    margin-bottom: 8px;
+}
+
+.library-heading p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+.library-counter {
+    color: var(--blue-primary);
+    background: #EAF3FB;
+    padding: 8px 13px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+/* TARJETAS DE SIMULADORES */
+
+.simulator-card {
+    height: 100%;
+    overflow: hidden;
+
+    background: white;
+    border: 1px solid #E5ECF3;
+    border-radius: 13px;
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+
+    animation: fadeUp 0.5s ease both;
+}
+
+.simulator-card:hover {
+    transform: translateY(-5px);
+    border-color: #B8D4EC;
+    box-shadow: 0 12px 28px rgba(18, 59, 104, 0.09);
+}
+
+.simulator-card-top {
+    height: 9px;
+    background: var(--card-color, #1D5C99);
+}
+
+.simulator-card-body {
+    padding: 24px;
+}
+
+.simulator-card-icon {
+    width: 53px;
+    height: 53px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--card-color, #1D5C99);
+    background: var(--card-background, #EAF3FB);
+
+    border-radius: 13px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.simulator-card h3 {
+    color: #243B53;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 9px;
+}
+
+.simulator-description {
+    color: #8391A1;
+    font-size: 12px;
+    line-height: 1.7;
+    min-height: 42px;
+    margin-bottom: 19px;
+}
+
+.simulator-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 13px 0;
+    border-top: 1px solid #EDF1F5;
+
+    color: #718096;
+    font-size: 11px;
+}
+
+.simulator-meta i {
+    margin-right: 5px;
+    color: var(--card-color, #1D5C99);
+}
+
+.btn-simulator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 11px;
+
+    color: white;
+    background: var(--blue-primary);
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.btn-simulator:hover {
+    color: white;
+    background: var(--blue-dark);
+}
+
+/* MENSAJE SIN DOCUMENTOS */
+
+.empty-library {
+    text-align: center;
+    padding: 45px 20px;
+    background: white;
+    border: 1px dashed #C8D7E6;
+    border-radius: 12px;
+    color: #7B8A9A;
+}
+
+/* FOOTER */
+
+.dashboard-footer {
+    background: white;
+    border-top: 1px solid #E6EDF5;
+    padding: 22px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    color: #8997A6;
+    font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .welcome-section {
+        padding: 35px 28px;
+    }
+
+    .welcome-illustration {
+        display: none;
+    }
+
+    .statistics-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .library-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .dashboard-main {
+        padding-top: 22px;
+    }
+
+    .welcome-section {
+        padding: 30px 23px;
+    }
+
+    .welcome-section h1 {
+        font-size: 28px;
+    }
+
+    .platform-status {
+        display: none;
+    }
+
+    .btn-logout {
+        padding: 8px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 7px;
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================================
+   EDUSIM - PANTALLA DEL SIMULADOR
+===================================================== */
+
+.simulator-page {
+    background: #f3f7fc;
+    min-height: 100vh;
+    color: #26384d;
+}
+
+.simulator-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5edf5;
+    padding: 15px 0;
+}
+
+.simulator-navbar .navbar-brand {
+    color: #123b68;
+    font-size: 1.35rem;
+}
+
+.simulator-container {
+    max-width: 950px;
+    padding-top: 45px;
+    padding-bottom: 40px;
+}
+
+.simulator-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.simulator-label {
+    color: #2878b9;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.simulator-heading h2,
+.review-heading h2 {
+    color: #123b68;
+    font-weight: 800;
+    margin: 8px 0;
+}
+
+.simulator-heading p,
+.review-heading p {
+    color: #718096;
+    margin-bottom: 0;
+}
+
+.question-counter {
+    background: #eaf3fb;
+    color: #1d5c99;
+    border-radius: 12px;
+    padding: 12px 18px;
+    text-align: center;
+    min-width: 105px;
+}
+
+.question-counter span {
+    display: block;
+    font-size: 0.75rem;
+}
+
+.question-counter strong {
+    font-size: 1.1rem;
+}
+
+.simulator-progress {
+    height: 8px;
+    border-radius: 20px;
+    background: #e2eaf2;
+    margin-bottom: 25px;
+}
+
+.simulator-progress .progress-bar {
+    background: #2878b9;
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+.question-card {
+    background: #ffffff;
+    border: 1px solid #e6edf5;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(20, 54, 90, 0.06);
+}
+
+.question-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.question-tag {
+    background: #eaf3fb;
+    color: #1d5c99;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.question-text {
+    color: #1d344e;
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 15px 18px;
+    text-align: left;
+    background: #ffffff;
+    border: 1.5px solid #dce5ef;
+    border-radius: 12px;
+    color: #34465a;
+    transition: all 0.2s ease;
+}
+
+.option-button:not(:disabled):hover {
+    border-color: #2878b9;
+    background: #f4f9fe;
+}
+
+.option-letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    border-radius: 9px;
+    background: #edf3f9;
+    color: #1d5c99;
+    font-weight: 800;
+}
+
+.option-text {
+    flex: 1;
+    line-height: 1.5;
+}
+
+.option-icon {
+    font-size: 1.2rem;
+    color: #a5b3c2;
+}
+
+.option-button.selected {
+    border-color: #2878b9;
+    background: #edf6ff;
+}
+
+.option-button.selected .option-letter {
+    background: #2878b9;
+    color: #ffffff;
+}
+
+.option-button.selected .option-icon {
+    color: #2878b9;
+}
+
+.option-button:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+/* Respuesta correcta */
+
+.option-button.option-correct {
+    border-color: #198754;
+    background: #e9f7ef;
+    color: #146c43;
+}
+
+.option-button.option-correct .option-letter {
+    background: #198754;
+    color: #ffffff;
+}
+
+.option-button.option-correct .option-icon {
+    color: #198754;
+}
+
+/* Respuesta incorrecta */
+
+.option-button.option-incorrect {
+    border-color: #dc3545;
+    background: #fff0f1;
+    color: #b02a37;
+}
+
+.option-button.option-incorrect .option-letter {
+    background: #dc3545;
+    color: #ffffff;
+}
+
+.option-button.option-incorrect .option-icon {
+    color: #dc3545;
+}
+
+/* Mensajes de corrección */
+
+.feedback-message {
+    margin-top: 22px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.feedback-correct {
+    color: #146c43;
+    background: #e9f7ef;
+    border: 1px solid #b7e4c7;
+}
+
+.feedback-incorrect {
+    color: #b02a37;
+    background: #fff0f1;
+    border: 1px solid #f1b9bf;
+}
+
+.feedback-warning {
+    color: #856404;
+    background: #fff8e1;
+    border: 1px solid #ffe69c;
+}
+
+.question-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.question-actions .btn {
+    padding: 12px 22px;
+    font-weight: 600;
+    border-radius: 9px;
+}
+
+.simulator-footer-info {
+    display: flex;
+    justify-content: space-between;
+    color: #8090a2;
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+/* =====================================================
+   RESULTADOS
+===================================================== */
+
+.result-heading {
+    margin: 25px 0 30px;
+}
+
+.result-heading h2 {
+    color: #123b68;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.result-heading p {
+    color: #718096;
+}
+
+.result-icon {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #eaf3fb;
+    color: #2878b9;
+    font-size: 2rem;
+}
+
+.result-score-card {
+    background: linear-gradient(135deg, #123b68, #2878b9);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 18px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+.result-score-card span {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    opacity: 0.85;
+}
+
+.result-score-card h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.result-score-card p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.result-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e6edf5;
+    border-radius: 14px;
+    padding: 25px 15px;
+}
+
+.result-stat i {
+    font-size: 1.5rem;
+}
+
+.result-stat strong {
+    font-size: 2rem;
+}
+
+.result-stat span {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.correct-stat i,
+.correct-stat strong {
+    color: #198754;
+}
+
+.incorrect-stat i,
+.incorrect-stat strong {
+    color: #dc3545;
+}
+
+.total-stat i,
+.total-stat strong {
+    color: #2878b9;
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.result-actions .btn {
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   REVISIÓN DE RESPUESTAS
+===================================================== */
+
+.review-heading {
+    margin-bottom: 25px;
+}
+
+.review-card {
+    background: #ffffff;
+    border: 1px solid #e4ebf3;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 15px;
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-card-header strong {
+    color: #123b68;
+}
+
+.review-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.review-status-correct {
+    color: #146c43;
+    background: #e9f7ef;
+}
+
+.review-status-incorrect {
+    color: #b02a37;
+    background: #fff0f1;
+}
+
+.review-question {
+    color: #26384d;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.review-answer {
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .simulator-container {
+        padding-top: 25px;
+    }
+
+    .simulator-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .question-counter {
+        align-self: flex-end;
+    }
+
+    .question-card {
+        padding: 22px 17px;
+    }
+
+    .question-text {
+        font-size: 1.15rem;
+    }
+
+    .option-button {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .question-actions {
+        justify-content: stretch;
+    }
+
+    .question-actions .btn {
+        width: 100%;
+    }
+
+    .result-score-card h1 {
+        font-size: 3rem;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .result-actions .btn {
+        width: 100%;
+    }
+}
